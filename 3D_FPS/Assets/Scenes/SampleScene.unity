@@ -317,7 +317,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGun: {fileID: 1960707570}
-  originPos: {x: 0, y: 0, z: 0}
+  isFineSightMode: 0
+  theCam: {fileID: 963194227}
+  hit_effect_prefab: {fileID: 4817327697306915118, guid: 531c35033354ef54cba4441ed303ae29, type: 3}
 --- !u!82 &44592982
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10795,6 +10797,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec49dde0af31c25469b4d27cf347b02d, type: 3}
+--- !u!1 &1200925859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ec49dde0af31c25469b4d27cf347b02d, type: 3}
+  m_PrefabInstance: {fileID: 1179063084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1200925861
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200925859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.82, z: 0}
 --- !u!1001 &1484093065
 PrefabInstance:
   m_ObjectHideFlags: 0
