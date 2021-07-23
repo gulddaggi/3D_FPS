@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
     {
         isGround = Physics.Raycast(transform.position, Vector3.down, capsuleCollider.bounds.extents.y + 0.1f);
         //capsuleCollider 영역 반만큼의 y값 만큼 아래방향으로 Ray가 나온다. -> 땅과 닿는다.
-        theCrosshair.RunningAnimation(!isGround);
+        theCrosshair.JumpingAnimation(!isGround);
     }
 
     //점프 시도
