@@ -12,7 +12,7 @@ public class HUD : MonoBehaviour
 
     //필요하면 HUD 호출, 필요없으면 HUD 비활성화
     [SerializeField]
-    private GameObject go_BulletGUD;
+    private GameObject go_BulletHUD;
 
     //총알 개수 텍스트에 반영
     [SerializeField]

@@ -2,11 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandController : CloseWeaponController
+public class PickaxeController : CloseWeaponController
 {
-    //활성화 여부
-    public static bool isActivate = false;
 
+    //활성화 여부
+    public static bool isActivate = true;
+
+    private void Start()
+    {
+        WeaponManager.currentWeapon = currentCloseWeapon.GetComponent<Transform>();
+        WeaponManager.currentWeaponAnim = currentCloseWeapon.anim;
+    }
+
+    public override void CloseWeaponChange(CloseWeapon _closeWeapon)
+    {
+        base.CloseWeaponChange(_closeWeapon); //공통분모
+        isActivate = true; //추가사항
+    }
 
     protected override IEnumerator HitCoroutine()
     {
@@ -30,11 +42,4 @@ public class HandController : CloseWeaponController
         }
 
     }
-
-    public override void CloseWeaponChange(CloseWeapon _closeWeapon)
-    {
-        base.CloseWeaponChange(_closeWeapon); //공통분모
-        isActivate = true; //추가사항
-    }
-
 }

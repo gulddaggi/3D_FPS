@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunController : MonoBehaviour
 {
     //활성화 여부
-    public static bool isActivate = true;
+    public static bool isActivate = false;
 
     //현재 장착된 총
     [SerializeField]
@@ -33,6 +33,7 @@ public class GunController : MonoBehaviour
     [SerializeField]
     private Camera theCam;
     private Crosshair theCrosshair;
+    private PlayerController thePlayerController;
 
     //피격 이펙트
     [SerializeField]
@@ -44,8 +45,9 @@ public class GunController : MonoBehaviour
         originPos = Vector3.zero;
         audioSource = GetComponent <AudioSource>();
         theCrosshair = FindObjectOfType<Crosshair>();
-        WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
-        WeaponManager.currentWeaponAnim = currentGun.anim;
+        //WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
+        //WeaponManager.currentWeaponAnim = currentGun.anim;
+
     }
 
     void Update()
