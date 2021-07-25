@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2918894472533618414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.00468, y: 0.48, z: 21.97}
+  m_LocalPosition: {x: 38.00468, y: 1.15, z: 21.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3389880607821549543}
@@ -292,11 +292,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  destroyTime: 5
+  destroyTime: 3
   col: {fileID: 2918894472533618413}
   go_rock: {fileID: 2612253669713778013}
   go_debris: {fileID: 2612253669432891303}
   go_effect_prefabs: {fileID: 8181178376643540392, guid: 4698a2df0a7d296428182337ca10eed2, type: 3}
+  go_rock_item_prefab: {fileID: 2529433803142298634, guid: 3cd8791411595574580ecfad20509388, type: 3}
+  count: 4
   strike_Sound: Pickaxe_Strike
   destroy_Sound: Rock_Destroy
 --- !u!54 &2918894472690423796
