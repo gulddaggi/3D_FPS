@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+<<<<<<< HEAD
 using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler //인터페이스 : 다중 상속 가능
 {
 
 
+=======
+
+public class Slot : MonoBehaviour
+{
+>>>>>>> dd5abc5fbab8c4bcaa02d011e26e5309044aaa5b
     public Item item; //획득한 아이템
     public int itemCount; //획득한 아이템의 개수
     public Image itemImage; //아이템의 이미지
@@ -18,6 +24,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
     [SerializeField]
     private GameObject go_CountImage;
 
+<<<<<<< HEAD
     private WeaponManager theWeaponManager; //hirarchy에 있는 객체는 할당했을시 찾지 못하기 때문에 SerializeField를 사용하지 않고 직접 선언한다.(Instantiate()의 경우)
 
     void Start()
@@ -27,6 +34,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
     }
 
 
+=======
+>>>>>>> dd5abc5fbab8c4bcaa02d011e26e5309044aaa5b
     //이미지의 투명도 조절
     private void SetColor(float _alpha)
     {
@@ -81,6 +90,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         text_Count.text = "0";
     }
 
+<<<<<<< HEAD
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
@@ -152,3 +162,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         }
     }
 }//Image Component에서 RaycastTarget : Raycast되는 이미지와 충돌되어 방해하기 때문에(마우스와 dragslot이 충돌해 클릭을 막음)이미지를 클릭할 수 없다.
+=======
+}
+>>>>>>> dd5abc5fbab8c4bcaa02d011e26e5309044aaa5b

@@ -5,7 +5,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
+<<<<<<< HEAD
     public static bool inventoryActivated = false;
+=======
+    public bool inventoryActivated = false;
+>>>>>>> dd5abc5fbab8c4bcaa02d011e26e5309044aaa5b
 
 
     //필요한 컴포넌트
