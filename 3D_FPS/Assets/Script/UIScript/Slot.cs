@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler //인터페이스 : 다중 상속 가능
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler //인터페이스 : 다중 상속 가능
 {
 
 
@@ -147,5 +147,21 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         {
             DragSlot.instance.dragSlot.ClearSlot();
         }
+    }
+
+    //마우스가 슬롯에 들어갈 때 발동
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (item != null)
+        {
+            theItemEffectDatabase.ShowToolTip(item, transform.position);
+
+        }
+    }
+
+    //마우스가 슬롯에서 빠져나갈 때 발동
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        theItemEffectDatabase.HideToolTip();
     }
 }//Image Component에서 RaycastTarget : Raycast되는 이미지와 충돌되어 방해하기 때문에(마우스와 dragslot이 충돌해 클릭을 막음)이미지를 클릭할 수 없다.

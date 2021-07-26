@@ -6,6 +6,8 @@ using UnityEngine;
 public class Item : ScriptableObject //게임오브젝트에 할당할 필요가 없다.
 {
     public string itemName; //아이템 이름
+    [TextArea]//줄 이동 가능해짐
+    public string itemDesc;//아이템 설명
     public ItemType itemType; //아이템 유형
     public Sprite itemImage; //아이템 이미지
     public GameObject itemPrefab; //아이템 프리팹
