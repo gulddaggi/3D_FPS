@@ -14,7 +14,8 @@ public abstract class CloseWeaponController : MonoBehaviour //미완성 클래스 = 추
     protected bool isSwing = false;
 
     protected RaycastHit hitInfo;
-
+    [SerializeField]
+    protected LayerMask layerMask;
 
 
 
@@ -58,7 +59,7 @@ public abstract class CloseWeaponController : MonoBehaviour //미완성 클래스 = 추
 
     protected bool CheckObject()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, currentCloseWeapon.range))
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, currentCloseWeapon.range, layerMask))
         // transform.forward -> transform.TransformDirection(Vector3.forward)로도 가능 : Vector3.forward를 플레이어 기준으로 고정시킨다.
         {
             return true;
