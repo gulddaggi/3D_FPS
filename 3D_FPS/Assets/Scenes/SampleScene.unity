@@ -419,7 +419,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1338,8 +1338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2959f42faca4454982b0337bf7ac34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 15
-  runSpeed: 25
+  walkSpeed: 5
+  runSpeed: 15
   crouchSpeed: 5
   jumpForce: 5
   isRun: 0
@@ -13801,7 +13801,7 @@ GameObject:
   - component: {fileID: 1065185123}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: NPC
+  m_TagString: WeakAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13819,21 +13819,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalName: Pig
-  hp: 2
-  walkSpeed: 1
-  runSpeed: 6
+  hp: 4
+  walkSpeed: 2
+  runSpeed: 5
+  turningSpeed: 0.1
   walkTime: 5
   waitTime: 4
   runTime: 3
   anim: {fileID: 690382734}
   rigid: {fileID: 1065185120}
   boxCol: {fileID: 1065185119}
-  sound_pig_Normal:
+  sound_Normal:
   - {fileID: 8300000, guid: d2b3db471d96d364db52c5405fc09f7e, type: 3}
   - {fileID: 8300000, guid: 803f1ffddc2daa44d8d3b6b7295f37db, type: 3}
   - {fileID: 8300000, guid: 49d05bff4f7d9d841a2ec4c20c3c47f7, type: 3}
-  soung_pig_Hurt: {fileID: 8300000, guid: 2a250804e6d7c5f4cb5edf150ab93764, type: 3}
-  soung_pig_Dead: {fileID: 8300000, guid: b06b2f7296d52c543b2f4f2523ad25df, type: 3}
+  soung_Hurt: {fileID: 8300000, guid: 2a250804e6d7c5f4cb5edf150ab93764, type: 3}
+  soung_Dead: {fileID: 8300000, guid: b06b2f7296d52c543b2f4f2523ad25df, type: 3}
 --- !u!65 &1065185119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17441,7 +17442,7 @@ MonoBehaviour:
   isAxe: 0
   isPickaxe: 1
   range: 3
-  damage: 0
+  damage: 2
   workSpeed: 0
   attackDelay: 1.8
   attackDelayA: 0.8
