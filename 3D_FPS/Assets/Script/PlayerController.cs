@@ -70,10 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         IsGround();
         TryJump();
-        TryRun();
         TryCrouch();
-        Move();
-        MoveCheck();
         if (!Inventory.inventoryActivated)
         {
             CameraRotation();
@@ -81,6 +78,8 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    
 
     //앉기 시도
     private void TryCrouch()
@@ -213,6 +212,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         MoveCheck();
+        Move();
+
+        TryRun();
+
     }
 
     //움직임 체크
