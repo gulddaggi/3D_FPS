@@ -68,14 +68,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        IsGround();
-        TryJump();
-        TryCrouch();
-        if (!Inventory.inventoryActivated)
+        if (GameManager.canPlayerMove)
         {
+            IsGround();
+            TryJump();
+            TryCrouch();
             CameraRotation();
             CharacterRotation();
+           
         }
+        
 
     }
 
@@ -211,10 +213,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveCheck();
-        Move();
-
-        TryRun();
+        if (GameManager.canPlayerMove)
+        {
+            MoveCheck();
+            Move();
+            TryRun();
+        }
+       
 
     }
 
