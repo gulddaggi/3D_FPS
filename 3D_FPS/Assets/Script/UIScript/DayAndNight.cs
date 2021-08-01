@@ -27,7 +27,7 @@ public class DayAndNight : MonoBehaviour
         {
            GameManager.isNight = true;
         }
-        else if (transform.eulerAngles.x >= 350)
+        else if (transform.eulerAngles.x < 20)
         {
             GameManager.isNight = false;
         }

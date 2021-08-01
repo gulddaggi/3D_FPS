@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour
     private float applySpeed;
     [SerializeField]
     private float crouchSpeed;
+    [SerializeField]
+    private float swimSpeed;
+    [SerializeField]
+    private float swimFastSpeed;
+    [SerializeField]
+    private float UpSwimSpeed;
 
     //점프 변수
     [SerializeField]
@@ -75,13 +81,44 @@ public class PlayerController : MonoBehaviour
             TryCrouch();
             CameraRotation();
             CharacterRotation();
-           
+            
+
         }
         
 
     }
+    private void FixedUpdate()
+    {
+        if (GameManager.canPlayerMove)
+        {
+            if (!GameManager.isWater)
+            {
+                TryRun();
+            }
+            WaterCheck();
+            MoveCheck();
+            Move();
+        }
 
-    
+
+    }
+
+    private void WaterCheck()
+    {
+        if (GameManager.isWater)
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Debug.Log("확인");
+                applySpeed = swimFastSpeed;
+            }
+            else
+            {
+                applySpeed = swimSpeed;
+            }
+        }
+    }
+
 
     //앉기 시도
     private void TryCrouch()
@@ -143,10 +180,19 @@ public class PlayerController : MonoBehaviour
     //점프 시도
     private void TryJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround && theStatusController.GetCurrentSP() > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && isGround && theStatusController.GetCurrentSP() > 0 && !GameManager.isWater)
         {
             Jump();
         }
+        else if(Input.GetKey(KeyCode.Space) && GameManager.isWater)
+        {
+            UpSwim();
+        }
+    }
+
+    private void UpSwim()
+    {
+        myRigid.velocity = transform.up * UpSwimSpeed;
     }
 
     //점프
@@ -211,17 +257,7 @@ public class PlayerController : MonoBehaviour
         myRigid.MovePosition(transform.position + _velocity * Time.deltaTime);
     }
 
-    private void FixedUpdate()
-    {
-        if (GameManager.canPlayerMove)
-        {
-            MoveCheck();
-            Move();
-            TryRun();
-        }
-       
-
-    }
+    
 
     //움직임 체크
     private void MoveCheck()

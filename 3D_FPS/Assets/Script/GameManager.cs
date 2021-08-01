@@ -11,8 +11,12 @@ public class GameManager : MonoBehaviour
     public static bool isNight = false;
     public static bool isWater = false;
 
+    private WeaponManager theWM;
+    private bool flag = false;
+
     void Start()
     {
+        theWM = FindObjectOfType<WeaponManager>();
         Cursor.lockState = CursorLockMode.Locked; //커서 잠금
         Cursor.visible = false; //커서가 안보임
     }
@@ -30,6 +34,24 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             canPlayerMove = true;
+        }
+
+        if (isWater)
+        {
+            if (!flag)
+            {
+                StopAllCoroutines();
+                StartCoroutine(theWM.WeaponInCoroutine());
+                flag = true;
+            }
+        }
+        else
+        {
+            if (flag)
+            {
+                theWM.WeaponOut();
+                flag = false;
+            }
         }
     }
 }
